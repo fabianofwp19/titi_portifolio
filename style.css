@@ -28,7 +28,7 @@ body {
     /* 1. Usar aspas duplas para o nome do arquivo, que é mais seguro para espaços/parênteses */
     /* ATENÇÃO: O nome do seu arquivo é muito frágil. Se isso falhar,
        renomeie o arquivo para 'bg.png' e mude aqui para url("img/bg.png") */
-    background-image: url("img/Camiseta 2024 (1) (1).png"); 
+    background-image: url("img/backgroundtv.png"); 
     
     /* 2. 'cover' está correto para preencher a tela */
     background-size: cover;
