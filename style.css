@@ -23,15 +23,23 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     
-    /* --- CORREÇÃO DO BACKGROUND RESPONSIVO --- */
-    background-image: url('img/Camiseta\ 2024\ \(1\)\ \(1\).png');
-    background-size: cover;       /* Garante que a imagem cubra o fundo */
+    /* --- CORREÇÃO DO BACKGROUND RESPONSIVO (v3) --- */
+    
+    /* 1. Usar aspas duplas para o nome do arquivo, que é mais seguro para espaços/parênteses */
+    /* ATENÇÃO: O nome do seu arquivo é muito frágil. Se isso falhar,
+       renomeie o arquivo para 'bg.png' e mude aqui para url("img/bg.png") */
+    background-image: url("img/Camiseta 2024 (1) (1).png"); 
+    
+    /* 2. 'cover' está correto para preencher a tela */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center; /* Centraliza a imagem */
-    background-attachment: scroll;    /* MUDANÇA PRINCIPAL: De 'fixed' para 'scroll' */
-    /* 'scroll' é o comportamento padrão e faz a imagem rolar com a página.
-      Isso EVITA o bug de zoom e posicionamento em celulares.
-    */
+    
+    /* 3. MUDANÇA PRINCIPAL: Mudar para 'center top'
+       Isso força a imagem a se alinhar ao TOPO da página, mostrando sua ilustração. */
+    background-position: center top; 
+    
+    /* 4. Manter 'scroll' para corrigir o bug do zoom no celular */
+    background-attachment: scroll; 
 }
 
 .container {
@@ -479,6 +487,9 @@ h1.main-title::after {
 @media (min-width: 1025px) {
     body {
         background-attachment: fixed; /* Re-ativa o 'fixed' para telas grandes */
+        
+        /* Para desktop, 'center center' pode ficar melhor com 'fixed' */
+        background-position: center center; 
     }
 }
 
