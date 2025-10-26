@@ -23,22 +23,19 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     
-    /* --- CORREÇÃO DO BACKGROUND RESPONSIVO (v3) --- */
+    /* --- CORREÇÃO DEFINITIVA DO BACKGROUND --- */
     
-    /* 1. Usar aspas duplas para o nome do arquivo, que é mais seguro para espaços/parênteses */
-    /* ATENÇÃO: O nome do seu arquivo é muito frágil. Se isso falhar,
-       renomeie o arquivo para 'bg.png' e mude aqui para url("img/bg.png") */
+    /* 1. Usando o NOVO NOME DE ARQUIVO (seguro) */
     background-image: url("img/backgroundtv.png"); 
     
-    /* 2. 'cover' está correto para preencher a tela */
+    /* 2. 'cover' para preencher a tela */
     background-size: cover;
     background-repeat: no-repeat;
     
-    /* 3. MUDANÇA PRINCIPAL: Mudar para 'center top'
-       Isso força a imagem a se alinhar ao TOPO da página, mostrando sua ilustração. */
+    /* 3. 'center top' para ALINHAR A ILUSTRAÇÃO NO TOPO */
     background-position: center top; 
     
-    /* 4. Manter 'scroll' para corrigir o bug do zoom no celular */
+    /* 4. 'scroll' para CORRIGIR O BUG DE ZOOM DO CELULAR */
     background-attachment: scroll; 
 }
 
@@ -483,12 +480,12 @@ h1.main-title::after {
 /* --- RESPONSIVIDADE --- */
 /* ============================================= */
 
-/* --- Opcional: Manter o efeito Parallax (fixed) APENAS no Desktop --- */
+/* --- Manter o efeito Parallax (fixed) APENAS no Desktop --- */
 @media (min-width: 1025px) {
     body {
         background-attachment: fixed; /* Re-ativa o 'fixed' para telas grandes */
         
-        /* Para desktop, 'center center' pode ficar melhor com 'fixed' */
+        /* Para desktop, 'center center' ainda é melhor com 'fixed' */
         background-position: center center; 
     }
 }
