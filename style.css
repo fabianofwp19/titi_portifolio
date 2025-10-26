@@ -481,6 +481,7 @@ h1.main-title::after {
 /* ============================================= */
 
 /* --- Manter o efeito Parallax (fixed) APENAS no Desktop --- */
+/* --- ERRO CORRIGIDO AQUI --- */
 @media (min-width: 1025px) {
     body {
         background-attachment: fixed; /* Re-ativa o 'fixed' para telas grandes */
