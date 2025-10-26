@@ -22,14 +22,16 @@ body {
     font-family: var(--secondary-font);
     color: var(--text-color);
     background-color: var(--bg-color);
-    /* --- AJUSTES AQUI PARA O BACKGROUND RESPONSIVO --- */
+    
+    /* --- CORREÇÃO DO BACKGROUND RESPONSIVO --- */
     background-image: url('img/Camiseta\ 2024\ \(1\)\ \(1\).png');
-    background-size: contain; /* Alterado de 'cover' para 'contain' */
-    background-repeat: no-repeat; /* Adicionado para evitar repetição */
-    background-position: center top; /* Centraliza a imagem no topo */
-    background-attachment: fixed;
-    /* Adicione um background-color de fallback, caso a imagem não carregue ou para espaços vazios */
-    background-color: var(--bg-color); 
+    background-size: cover;       /* Garante que a imagem cubra o fundo */
+    background-repeat: no-repeat;
+    background-position: center center; /* Centraliza a imagem */
+    background-attachment: scroll;    /* MUDANÇA PRINCIPAL: De 'fixed' para 'scroll' */
+    /* 'scroll' é o comportamento padrão e faz a imagem rolar com a página.
+      Isso EVITA o bug de zoom e posicionamento em celulares.
+    */
 }
 
 .container {
@@ -472,6 +474,14 @@ h1.main-title::after {
 /* ============================================= */
 /* --- RESPONSIVIDADE --- */
 /* ============================================= */
+
+/* --- Opcional: Manter o efeito Parallax (fixed) APENAS no Desktop --- */
+@media (min-width: 1025px) {
+    body {
+        background-attachment: fixed; /* Re-ativa o 'fixed' para telas grandes */
+    }
+}
+
 
 /* --- Tablet (900px e menores) --- */
 @media (max-width: 900px) {
